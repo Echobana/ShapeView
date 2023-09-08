@@ -12,7 +12,7 @@ public:
 	Shape() = default;
 	virtual ~Shape() = default;
 	virtual void draw(Canvas* canvas) = 0;
-	virtual void rotate(point_t center, double angle) = 0;
+	virtual void rotate(double angle) = 0;
 protected:
 	virtual void find_center() = 0;
 public:
@@ -26,7 +26,7 @@ public:
 	
 	Polygon(std::vector<point_t> points);
 	
-	void rotate(point_t center, double angle) override;
+	void rotate(double angle) override;
 	void draw(Canvas* canvas) override;
 protected:
 	void find_center() override;

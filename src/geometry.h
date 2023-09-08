@@ -1,21 +1,26 @@
 #pragma once
 
-typedef class _point_t
+struct point_t
 {
-public:
 	unsigned long long x;
 	unsigned long long y;
 	char color;
 
-	//friend point_t operator -(const point_t& reduced, const point_t& subtracted);
-} point_t;
+	friend point_t operator -(const point_t& reduced, const point_t& subtracted);
+	friend point_t operator *(const point_t& point, unsigned k);
+	friend point_t operator +(const point_t& term_1, const point_t& term_2);
+
+};
 
 
-typedef struct _vector_t
+struct vector_t
 {
 	unsigned long long x;
 	unsigned long long y;
-} vector_t;
+
+	vector_t(point_t start, point_t finish);
+	friend unsigned long long dot(vector_t v0, vector_t v1);
+};
 
 //typedef struct _point_vector_t
 //{
