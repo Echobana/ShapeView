@@ -16,6 +16,5 @@ point_t operator*(RotateMatrix m, const point_t& point)
 	double angle = m._angle;
 	unsigned x = center.x * (1 - sin(angle)) + point.x + center.y * cos(angle) - point.y;
 	unsigned y = center.y * (1 - sin(angle)) + point.y + point.x * cos(angle) - center.x * cos(angle);
-	point_t res = { x, y };
-	return res;
+	return  { x, y };
 }

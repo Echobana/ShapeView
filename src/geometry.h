@@ -9,7 +9,7 @@ struct point_t
 	friend point_t operator -(const point_t& reduced, const point_t& subtracted);
 	friend point_t operator *(const point_t& point, unsigned k);
 	friend point_t operator +(const point_t& term_1, const point_t& term_2);
-
+	friend point_t operator /(const point_t& divisible, unsigned divisor);
 };
 
 

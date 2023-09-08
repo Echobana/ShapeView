@@ -21,6 +21,13 @@ point_t operator+(const point_t& term_1, const point_t& term_2)
 }
 
 
+point_t operator/(const point_t& divisible, unsigned divisor)
+{
+	point_t res = { divisible.x / divisor, divisible.y / divisor };
+	return res;
+}
+
+
 
 unsigned long long dot(vector_t v0, vector_t v1)
 {
