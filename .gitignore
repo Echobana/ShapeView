@@ -1,0 +1,16 @@
+*.*
+build/*
+!*.cpp
+!*.h
+!*.hpp
+!*.cu
+!*.cuh
+!*.inl
+!.gitignore
+!*.tex
+!*.sty
+!*.py
+!*.yaml
+!*.spec
+!*.md
+~*.*
