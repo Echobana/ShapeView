@@ -23,10 +23,11 @@ public:
 	ConsoleCanvas() = default;
 	ConsoleCanvas(unsigned long long length, unsigned long long height);
 	void display() const override;
-	void line(point_t start, point_t finish);
+	void line(point_t start, point_t finish) override;
 private:
 	unsigned long long _length;
 	unsigned long long _height;
-
 };
+
+
 

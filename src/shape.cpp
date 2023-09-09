@@ -1,7 +1,5 @@
 #include "shape.h"
 
-
-
 Polygon::Polygon(std::vector<point_t> points)
 	: _vertexes(points)
 {
@@ -54,3 +52,44 @@ point_t Polygon::find_triangle_center(const point_t& A, const point_t& B, const 
 }
 
 
+Circle::Circle(point_t center, unsigned int radius)
+    : _radius(radius)
+{
+    _center = center;
+    int x = 0;
+    int y = _radius;
+    int delta = 1 - 2 * _radius;
+    int error = 0;
+
+    while (y >= x)
+    {
+        _dots.push_back(point_t{_center.x + x, _center.y + y});
+        _dots.push_back(point_t{_center.x + x, _center.y - y});
+        _dots.push_back(point_t{_center.x - x, _center.y + y});
+        _dots.push_back(point_t{_center.x - x, _center.y - y});
+        _dots.push_back(point_t{_center.x + y, _center.y + x});
+        _dots.push_back(point_t{_center.x + y, _center.y - x});
+        _dots.push_back(point_t{_center.x - y, _center.y + x});
+        _dots.push_back(point_t{_center.x - y, _center.y - x});
+
+        error = 2 * (delta + y) - 1;
+        if ((delta < 0) && (error <=0))
+        {
+            delta += 2 * ++x + 1;
+            continue;
+        }
+        if ((delta > 0) && (error > 0))
+        {
+            delta -= 2 * --y + 1;
+            continue;
+        }
+        delta += 2 * (++x - --y);
+    }
+}
+
+void Circle::rotate(double angle) {}
+
+void Circle::draw(Canvas *canvas) {
+    for (auto it = _dots.begin(); it != _dots.end() - 1; ++it)
+        canvas->line(it[0], it[1]);
+}
