@@ -1,15 +1,14 @@
 #include <iostream>
 #include "canvas.h"
 #include "shape.h"
-#include "matrix.h"
 #include "canvas_factory.h"
 #include "shape_factory.h"
 #include "yaml-cpp/yaml.h"
 #include "unordered_map"
 
-#define ADD_FACTORY(NAME) {#NAME, NAMECanvas::create}
-typedef Canvas* (*FactoryType)(unsigned length, unsigned height);
-std::unordered_map<const char*, FactoryType> canvas_register;
+//#define ADD_FACTORY(NAME) {#NAME, NAMECanvas::create}
+//typedef Canvas* (*FactoryType)(unsigned length, unsigned height);
+//std::unordered_map<const char*, FactoryType> canvas_register;
 
 int main()
 {
@@ -38,12 +37,12 @@ int main()
 
     // Draw shape
     double yaml_angle = config["SHAPE"]["angle"].as<double>() ;
-    //shape->rotate(yaml_angle * 3.14 / 180);
+    shape->rotate(yaml_angle * 3.14 / 180);
     shape->draw(canvas);
 	canvas->display();
 
 //    delete shape;
 //    delete shapeFactory;
-//	delete canvas;
+//    delete canvas;
 //    delete canvas_factory;
 }

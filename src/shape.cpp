@@ -6,7 +6,8 @@ Polygon::Polygon(std::vector<point_t> points)
 	find_center();
 }
 
-
+// did not turn point_t coordinates to double
+// searching center algorithm could return wrong result
 void Polygon::rotate(double angle)
 {
 	RotateMatrix m = RotateMatrix(_center, angle);
@@ -23,6 +24,7 @@ void Polygon::draw(Canvas* canvas)
 	canvas->line(*_vertexes.rbegin(), *_vertexes.begin());
 }
 
+// centroid
 void Polygon::find_center()
 {
 	const point_t& start = _vertexes[0];

@@ -1,5 +1,5 @@
 #include "canvas.h"
-#include "geometry.h"
+#include "geometry/geometry.h"
 
 ConsoleCanvas::ConsoleCanvas(unsigned long long length, unsigned long long height)
 	: _length(length)

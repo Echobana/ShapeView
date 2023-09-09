@@ -1,4 +1,9 @@
-#pragma once
+#ifndef GEOMETRY_LIBRARY_H
+#define GEOMETRY_LIBRARY_H
+
+#include "math.h"
+#include <array>
+// temp lightweight for linear algebra
 
 struct point_t
 {
@@ -22,8 +27,18 @@ struct vector_t
 	friend unsigned long long dot(vector_t v0, vector_t v1);
 };
 
-//typedef struct _point_vector_t
-//{
-//	point_t* data;
-//	unsigned long long size;
-//} point_vector_t;
+
+class RotateMatrix
+{
+public:
+    RotateMatrix() = default;
+    RotateMatrix(point_t center, double angle);
+private:
+    std::array<double, 4>	_matrix;
+    point_t					_center;
+    double					_angle;
+    friend point_t operator * (RotateMatrix m, const point_t& point);
+};
+
+#endif //GEOMETRY_LIBRARY_H
+

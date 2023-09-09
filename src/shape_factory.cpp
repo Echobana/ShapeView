@@ -1,5 +1,5 @@
 #include "shape_factory.h"
-#include "geometry.h"
+#include "geometry/geometry.h"
 
 Shape *PolygonFactory::create() {
     std::vector<unsigned> xs = init_parameters["vertexes"]["x"].as<std::vector<unsigned >>();

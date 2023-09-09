@@ -3,8 +3,7 @@
 #include <vector>
 #include "math.h"
 #include "canvas.h"
-#include "geometry.h"
-#include "matrix.h"
+#include "geometry/geometry.h"
 
 class Shape
 {
