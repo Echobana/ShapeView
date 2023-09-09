@@ -48,6 +48,7 @@ void Polygon::find_center()
 		total_area_x_center = total_area_x_center + triangle_center * area;
 	}
 	_center = total_area_x_center / total_area;
+    _area = total_area / 2;
 }
 
 point_t Polygon::find_triangle_center(const point_t& A, const point_t& B, const point_t& C)
@@ -60,6 +61,7 @@ Circle::Circle(point_t center, unsigned int radius)
     : _radius(radius)
 {
     _center = center;
+    _area = 3.14 * radius * radius;
     int x = 0;
     int y = _radius;
     int delta = 1 - 2 * _radius;
@@ -91,9 +93,14 @@ Circle::Circle(point_t center, unsigned int radius)
     }
 }
 
-void Circle::rotate(double angle) {}
 
 void Circle::draw(Canvas *canvas) {
     for (const auto& dot : _dots)
         canvas->draw_pixel(dot);
 }
+
+unsigned Shape::get_area() const {
+    return _area;
+}
+
+void Shape::rotate(double angle) {}

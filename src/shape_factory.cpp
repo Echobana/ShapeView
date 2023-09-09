@@ -23,11 +23,8 @@ Shape *CircleFactory::create() {
 IShapeFactory::IShapeFactory(const YAML::Node &parameters)
     : init_parameters(parameters) {}
 
-CircleFactory::CircleFactory(const YAML::Node &parameters) : IShapeFactory(parameters)
-{
+CircleFactory::CircleFactory(const YAML::Node &parameters)
+    : IShapeFactory(parameters) {}
 
-}
-
-PolygonFactory::PolygonFactory(const YAML::Node &parameters) : IShapeFactory(parameters) {
-
-}
+PolygonFactory::PolygonFactory(const YAML::Node &parameters)
+    : IShapeFactory(parameters) {}
