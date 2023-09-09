@@ -26,6 +26,7 @@ public:
 	void display() const override;
 	void line(point_t start, point_t finish) override;
     void draw_pixel(point_t position) override;
+    static Canvas* create(unsigned length, unsigned height);
 private:
 	unsigned long long _length;
 	unsigned long long _height;

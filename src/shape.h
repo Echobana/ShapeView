@@ -13,7 +13,6 @@ public:
 	virtual ~Shape() = default;
 	virtual void draw(Canvas* canvas) = 0;
 	virtual void rotate(double angle) = 0;
-
 public:
 	point_t _center;
 };

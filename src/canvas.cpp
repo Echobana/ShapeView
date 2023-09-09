@@ -70,5 +70,9 @@ void ConsoleCanvas::draw_pixel(point_t position) {
     _pixels[position.x + position.y * _length].color = '*';
 }
 
+Canvas *ConsoleCanvas::create(unsigned length, unsigned height) {
+    return new ConsoleCanvas(length, height);
+}
+
 
 

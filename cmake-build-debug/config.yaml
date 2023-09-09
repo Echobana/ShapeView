@@ -1,0 +1,14 @@
+CANVAS:
+  type: console
+  length: 10
+  height: 10
+SHAPE:
+  type: circle # polygon, circle
+  angle: 45
+CIRCLE_PARAMETERS:
+  center: [5, 5]
+  radius: 4
+POLYGON_PARAMETERS:
+  vertexes:
+    x: [1, 3, 3, 1]
+    y: [1, 1, 3, 3]
