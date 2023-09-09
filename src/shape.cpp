@@ -90,6 +90,6 @@ Circle::Circle(point_t center, unsigned int radius)
 void Circle::rotate(double angle) {}
 
 void Circle::draw(Canvas *canvas) {
-    for (auto it = _dots.begin(); it != _dots.end() - 1; ++it)
-        canvas->line(it[0], it[1]);
+    for (const auto& dot : _dots)
+        canvas->draw_pixel(dot);
 }

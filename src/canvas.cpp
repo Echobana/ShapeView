@@ -66,5 +66,9 @@ void ConsoleCanvas::display() const
 	}
 }
 
+void ConsoleCanvas::draw_pixel(point_t position) {
+    _pixels[position.x + position.y * _length].color = '*';
+}
+
 
 
