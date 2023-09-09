@@ -5,6 +5,7 @@
 #include <array>
 // temp lightweight for linear algebra
 
+
 struct point_t
 {
 	unsigned long long x;

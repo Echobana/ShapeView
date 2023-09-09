@@ -1,13 +1,15 @@
 #include "shape.h"
 
+// did not turn point_t coordinates to double
+// searching center algorithm could return wrong result
 Polygon::Polygon(std::vector<point_t> points)
 	: _vertexes(points)
 {
 	find_center();
 }
 
-// did not turn point_t coordinates to double
-// searching center algorithm could return wrong result
+
+// does not handle situation if rotated vertex is out of canvas
 void Polygon::rotate(double angle)
 {
 	RotateMatrix m = RotateMatrix(_center, angle);
@@ -53,7 +55,7 @@ point_t Polygon::find_triangle_center(const point_t& A, const point_t& B, const 
 	return {(A.x + B.x + C.x) / 3, (A.y + B.y + C.y) / 3};
 }
 
-
+// Bresenham's algorithm
 Circle::Circle(point_t center, unsigned int radius)
     : _radius(radius)
 {

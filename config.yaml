@@ -3,12 +3,12 @@ CANVAS:
   length: 10
   height: 10
 SHAPE:
-  type: polygon # polygon, circle
+  type: circle # polygon, circle
   angle: 45
 CIRCLE_PARAMETERS:
   center: [5, 5]
   radius: 4
 POLYGON_PARAMETERS:
   vertexes:
-    x: [2, 4, 4, 2]
-    y: [2, 2, 4, 4]
+    x: [1, 3, 3, 1]
+    y: [1, 1, 3, 3]

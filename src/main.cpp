@@ -6,6 +6,9 @@
 #include "yaml-cpp/yaml.h"
 #include "unordered_map"
 
+// total mess with types
+// TODO: create conversion space_point-to-pixel
+
 //#define ADD_FACTORY(NAME) {#NAME, NAMECanvas::create}
 //typedef Canvas* (*FactoryType)(unsigned length, unsigned height);
 //std::unordered_map<const char*, FactoryType> canvas_register;
@@ -37,7 +40,8 @@ int main()
 
     // Draw shape
     double yaml_angle = config["SHAPE"]["angle"].as<double>() ;
-    shape->rotate(yaml_angle * 3.14 / 180);
+    if (yaml_angle != 0)
+        shape->rotate(yaml_angle * 3.14 / 180);
     shape->draw(canvas);
 	canvas->display();
 
